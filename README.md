@@ -5,9 +5,10 @@ details about the event could be foudn here: https://www.microsoft.com/bg-bg/xam
 ## XamathonBG ##
 
 As part of the Xamarin Hackathon 2016 Sofia the tems have woerked on multiple projects. 
-One of the project used kick start the development was __Displaying Pop-up __
-*Guide is avaliable here: https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/navigation/pop-ups/
-*source on gitHub: https://github.com/xamarin/xamarin-forms-samples/tree/master/Navigation/Pop-ups/WorkingWithPopups
+One of the project used kick start the development was __Displaying Pop-up__
+
+* Guide is avaliable here: https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/navigation/pop-ups/
+* Source on gitHub: https://github.com/xamarin/xamarin-forms-samples/tree/master/Navigation/Pop-ups/WorkingWithPopups
 
 The teams used it to set-up their development environements and do some tests. 
 
@@ -31,10 +32,11 @@ The application was tested on Winodws device, Andoird Device and iOS simulator. 
 ![Xamarin and Azure Logic App tests with twitter](https://github.com/xayo/XamathonBG/blob/master/screenshots/XamarinLogicAppsTwitterTests.PNG)
 
 
-##Code##
+## Code ##
 
 Only 2 file form the original sample were modified in order to implement this solution. the files are abaliable under the **/src** folder.
-The essential part is 3 lines of code part of [AlertPage.xaml](https://github.com/xayo/XamathonBG/blob/master/src/AlertPage.xaml:
+
+The essential part is 3 lines of code part of [AlertPage.xaml](https://github.com/xayo/XamathonBG/blob/master/src/AlertPage.xaml) :
 ``` //Http Request
 var httpClient = new HttpClient();
 var content = new StringContent(this.twiterbody.Text);
