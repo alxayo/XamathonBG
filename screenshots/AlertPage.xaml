@@ -1,0 +1,36 @@
+﻿using System;
+using System.Diagnostics;
+using Xamarin.Forms;
+using System.Net.Http;
+
+
+namespace WorkingWithPopups
+{
+	public partial class AlertPage : ContentPage
+	{
+		public AlertPage ()
+		{
+			InitializeComponent ();
+		}
+
+		async void OnAlertSimpleClicked (object sender, EventArgs e)
+		{
+			await DisplayAlert ("Tweet was Post", this.twiterbody.Text, "OK");
+			
+			//Use the URL provided by your Logic App to trigger triger it. Pase the trigger URL belo in connectURL avairable
+
+        	var connectURL = "https://<your domain>.westeurope.logic.azure.com:443/workflows/ <your application>/triggers/manual/run?<your token>";
+            
+			//Http Request
+            var httpClient = new HttpClient();
+            var content = new StringContent(this.twiterbody.Text);
+            var result = await httpClient.PostAsync(connectURL, content).ConfigureAwait(false);
+		}
+
+		async void OnAlertYesNoClicked (object sender, EventArgs e)
+		{
+			var answer = await DisplayAlert ("Question?", "Would you like to play a game", "Yes", "No");
+			Debug.WriteLine ("Answer: " + answer);
+		}
+	}
+}
